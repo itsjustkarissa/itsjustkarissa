@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>It's Just Karissa</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <meta charset="utf8">
+  </head>
+  <body>
+    <header class="wrapper">
+      <h1>It'sJustKarissa</h1>
+<!--
+      <nav>
+        <div class="n1"><a href="#" class="l">Shop</a></div>
+        <div class="n2"><a href="#" class="m">Blog</a></div>
+        <div class="n3"><a href="#" class="r">Recipes</a></div>
+      </nav>
+-->
+      <nav>
+        <% {'shop' => 'Shop', 'blog' => 'Blog', 'recipes' => 'Recipes'}.each_with_index do |values, index| %>
+          <div class="<%= "n#{index+1}" %><%= ' current_page' if (@page == values[0]) %>">
+            <a href="/<%= values[0] if values[0] != 'blog' %>"><%= values[1] %></a>
+          </div>
+        <% end %>
+      </nav>
+      <%= yield %>
+    </header>
+  </body>
+</html>

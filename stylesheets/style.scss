@@ -137,20 +137,21 @@ nav div.current_page {
 .n2 a,
 .n3 a {
   color: black;
+  padding: 5px;
 }
 .n1 a,
 .n3 a {
   position: absolute;
 }
 .n1 a {
-  left: 93px;
-  top: 18px;
+  left: 94px;
+  top: 16px;
   -webkit-transform: rotate(15deg);
      -moz-transform: rotate(15deg);
           transform: rotate(15deg);
 }
 .n3 a {
-  right: 96px;
+  right: 94px;
   top: 18px;
   -webkit-transform: rotate(-15deg);
      -moz-transform: rotate(-15deg);
@@ -162,13 +163,13 @@ nav div.current_page {
   font-weight: bold;
 }
 .n1 a:hover {
-  top: 16px;  
+  top: 14px;  
 }
 .n2 a:hover {
-  top: -2px; 
+  top: -5px; 
 }
 .n3 a:hover {
-  right: 93px;
+  right: 92px;
   top: 16px;
 }
 /*
@@ -190,6 +191,23 @@ nav div.current_page {
   font-size: 12px;
   margin-top: 16px;
 }
-.current_page {
-  color: red;
+.shop .item,
+.recipes .item {
+  color: black;
+  display: inline-block;
+  font-size: 24px;
+  height: 110px;
+  margin: 50px 15px 0;
+  width: 110px;
 }
+.shop .item:hover,
+.recipes .item:hover {
+  text-shadow: 0 -1px 0 #777;
+}
+.shop .item img,
+.recipes .item img {
+  box-shadow: 0px 1px 2px 0px #666;
+  margin-bottom: 8px; 
+}
+
+

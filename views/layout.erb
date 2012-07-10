@@ -8,13 +8,6 @@
   <body>
     <header class="wrapper">
       <h1>It'sJustKarissa</h1>
-<!--
-      <nav>
-        <div class="n1"><a href="#" class="l">Shop</a></div>
-        <div class="n2"><a href="#" class="m">Blog</a></div>
-        <div class="n3"><a href="#" class="r">Recipes</a></div>
-      </nav>
--->
       <nav>
         <% {'shop' => 'Shop', 'blog' => 'Blog', 'recipes' => 'Recipes'}.each_with_index do |values, index| %>
           <div class="<%= "n#{index+1}" %><%= ' current_page' if (@page == values[0]) %>">

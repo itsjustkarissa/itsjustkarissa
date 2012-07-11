@@ -186,7 +186,8 @@ nav div.current_page {
 .post {
   margin-top: 20px;
 }
-.post p {
+.post p,
+.single .details p {
   font-family: PrestigeEliteStdBold;
   font-size: 12px;
   margin-top: 16px;
@@ -201,7 +202,8 @@ nav div.current_page {
   width: 110px;
 }
 .shop .item:hover,
-.recipes .item:hover {
+.recipes .item:hover,
+.button:hover {
   text-shadow: 0 -1px 0 #777;
 }
 .shop .item img,
@@ -209,5 +211,38 @@ nav div.current_page {
   box-shadow: 0px 1px 2px 0px #666;
   margin-bottom: 8px; 
 }
-
-
+.single {
+  position: relative;
+  margin-top: 50px;
+}
+.single .back {
+  color: black;
+  font-size: 30px;
+  position: absolute;
+  top: -40px;
+}
+.single img {
+  margin: 0 30px 40px 0;
+  width: 360px;
+}
+.single .details {
+  display: inline-block;
+  max-width: 318px;
+}
+.button {
+  position: relative;
+  color: black;
+  font-size: 22px;
+  margin-left: 80%;
+  padding: 4px;
+  text-transform: uppercase;
+}
+.button:after {
+  background-image: url(/images/hover-1.png);
+  content:"";
+  height: 14px;
+  left: -8px;
+  position: absolute;
+  top: -4px;
+  width: 12px;
+}

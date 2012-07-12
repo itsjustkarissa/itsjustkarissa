@@ -2,7 +2,17 @@ require 'sinatra'
 require 'yaml'
 
 def file_relative(path)
-  File.new(File.join(File.dirname(__FILE__), path))
+  file = File.join(File.dirname(__FILE__), path)
+  if File.exists?(file)
+    File.new(file)
+  else
+    not_found
+  end
+end
+
+not_found do
+  status 404
+  erb :'404', :layout => false
 end
 
 # Route to / (home page)
@@ -28,14 +38,50 @@ end
 
 get '/recipes/:recipe' do
   @page = 'recipes'
-  @contents = YAML::load(file_relative("views/recipes/#{params[:recipe]}.yaml").read)
-  erb :'recipes/recipe'
+  recipe_files = YAML::load(file_relative('views/recipes/_published.yaml'))
+  if recipe_files.include?(params[:recipe])
+    @contents = YAML::load(file_relative("views/recipes/#{params[:recipe]}.yaml").read)
+    erb :'recipes/recipe'
+  else
+    not_found
+  end
+end
+
+get '/blog' do
+  @page = 'blog'
+  blog_files = YAML::load(file_relative('views/blog/_published.yaml'))
+  @blog_posts = []
+  blog_files.reverse.each do |blog_file|
+    blog_yaml = YAML::load(file_relative("views/blog/#{blog_file}.yaml").read)
+    @blog_posts.push({
+      :path => blog_file,
+      :title => blog_yaml["title"],
+      :date => blog_yaml["date"],
+      :content => blog_yaml["content"]
+    })
+  end
+  erb :'blog/blog_posts'
+end
+
+get '/blog/:blog_post' do
+  @page = 'blog'
+  blog_files = YAML::load(file_relative('views/blog/_published.yaml'))
+  if blog_files.include?(params[:blog_post])
+    @blog_post = YAML::load(file_relative("views/blog/#{params[:blog_post]}.yaml").read)
+    erb :'blog/blog_post'
+  else
+    not_found
+  end
 end
 
 # Route to /{anything here}
 get '/:page' do
-  @page = params[:page] # Set page to {anything here} (for navigation)
-  erb :"#{params[:page]}" # Render views/{anything here}.erb
+  if File.exists?(file_relative("views/#{params[:page]}.erb"))
+    @page = params[:page] # Set page to {anything here} (for navigation)
+    erb :"#{params[:page]}" # Render views/{anything here}.erb
+  else
+    not_found
+  end
 end
   
 # Route /stylesheets/{anything}.css

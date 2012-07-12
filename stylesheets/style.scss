@@ -118,7 +118,7 @@ nav div {
   text-align: center; 
 }
 nav div.current_page {
-  background-position-y: 106px;
+  background-position-y: 105px;
 }
 .n1 {
   background-image: url(/images/banner-sprite.png);
@@ -159,6 +159,7 @@ nav div.current_page {
      -moz-transform: rotate(-15deg);
           transform: rotate(-15deg);  
 }
+h1 a:hover,
 .n1 a:hover,
 .n2 a:hover,
 .n3 a:hover {
@@ -188,7 +189,15 @@ nav div.current_page {
 .post {
   margin-top: 20px;
 }
+.post a {
+  color: black;
+}
+.post .link {
+  text-decoration: underline;
+}
 .post p,
+.post ul,
+.post ol,
 .single .details p,
 .single .details ul,
 .single .details ol {
@@ -207,7 +216,7 @@ nav div.current_page {
   list-style: circle;
   margin-left: 16px;
 }
-.shop .item,
+.shop a,
 .recipes a {
   color: black;
   display: inline-block;
@@ -216,12 +225,13 @@ nav div.current_page {
   margin: 50px 15px 0;
   width: 110px;
 }
-.shop .item:hover,
+.shop a:hover,
+.blog .post a:hover,
 .recipes a:hover,
 .button:hover {
   text-shadow: 0 -1px 0 #777;
 }
-.shop .item img,
+.shop a img,
 .recipes a img {
   box-shadow: 0px 1px 2px 0px #666;
   margin-bottom: 8px; 

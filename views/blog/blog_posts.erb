@@ -1,6 +1,14 @@
 <div class="wrapper">
   <section class="blog">
-    <div class="post">
+    <% @blog_posts.reverse.each do |blog_post| %>
+      <div class="post">
+        <h2>
+          <a href="/blog/<%= blog_post[:path] %>"><%= "#{blog_post[:title]} &ndash; #{blog_post[:date]}" %></a>
+        </h2>
+        <p><%= blog_post[:content] %></p>
+      </div>
+    <% end %>
+    <!--<div class="post">
       <h2>Guess who’s back, back again - 07/05/12</h2>
       <p>Hey guys. I’ve been pooing a ton this morning since I ate way too much for independence day. 
       Johnathan wanted to skype today but since I was in the middle of a pooing inferno I unfortunately missed out on that rare opportunity.  
@@ -14,6 +22,6 @@
       Assuming I’ll be the only vegan, I’ll prolly make a huge pot of chilli and cookies to help fuel the friendly omni’s and myself all night long for a late night of partying. 
       I’m excited for the games, games are so much fun.
       </p>
-    </div>
+    </div>-->
   </section>
 </div>

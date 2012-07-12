@@ -7,11 +7,11 @@
   </head>
   <body>
     <header class="wrapper">
-      <h1>It'sJustKarissa</h1>
+      <h1><a href="/">It'sJustKarissa</a></h1>
       <nav>
         <% {'shop' => 'Shop', 'blog' => 'Blog', 'recipes' => 'Recipes'}.each_with_index do |values, index| %>
-          <div class="<%= "n#{index+1}" %><%= ' current_page' if (@page == values[0]) %>">
-            <a href="/<%= values[0] if values[0] != 'blog' %>"><%= values[1] %></a>
+          <div class="<%= "n#{index+1}" %><%= ' current_page' if (@page == values[0] || @page == 'home') %>">
+            <a href="/<%= values[0] if values[0] != 'home' %>"><%= values[1] %></a>
           </div>
         <% end %>
       </nav>

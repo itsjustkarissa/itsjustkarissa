@@ -187,10 +187,23 @@ nav div.current_page {
   margin-top: 20px;
 }
 .post p,
-.single .details p {
+.single .details p,
+.single .details ul,
+.single .details ol {
   font-family: PrestigeEliteStdBold;
   font-size: 12px;
   margin-top: 16px;
+}
+.single .details {
+  margin-bottom: 40px;
+}
+.single .details ul {
+  border-bottom: 1px dashed #999;
+  padding-bottom: 14px;
+}
+.single .details ol {
+  list-style: circle;
+  margin-left: 16px;
 }
 .shop .item,
 .recipes .item {

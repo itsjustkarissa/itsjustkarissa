@@ -23,19 +23,19 @@ get '/recipes' do
       :title => recipe_yaml["title"]
     })
   end
-  erb :recipes
+  erb :'recipes/recipes'
+end
+
+get '/recipes/:recipe' do
+  @page = 'recipes'
+  @contents = YAML::load(file_relative("views/recipes/#{params[:recipe]}.yaml").read)
+  erb :'recipes/recipe'
 end
 
 # Route to /{anything here}
 get '/:page' do
   @page = params[:page] # Set page to {anything here} (for navigation)
   erb :"#{params[:page]}" # Render views/{anything here}.erb
-end
-
-get '/recipes/:recipe' do
-  @page = 'recipes'
-  @contents = YAML::load(file_relative("views/recipes/#{params[:recipe]}.yaml").read)
-  erb :recipe
 end
   
 # Route /stylesheets/{anything}.css

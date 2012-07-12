@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <section class="recipes">
+    <% @recipes.each do |recipe| %>
+      <a href="/recipes/<%= recipe[:path] %>">
+        <img alt="<%= recipe[:title] %>" src="<%= recipe[:image] %>">
+        <%= recipe[:title] %>
+      </a>
+    <% end %>
+  </section>
+</div>

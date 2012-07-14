@@ -237,7 +237,8 @@ h1 a:hover,
 .shop a:hover,
 .blog .post a:hover,
 .recipes a:hover,
-.button:hover {
+.button:hover,
+.single .back {
   text-shadow: 0 -1px 0 #777;
 }
 .shop a img,
@@ -252,8 +253,13 @@ h1 a:hover,
 .single .back {
   color: black;
   font-size: 30px;
+  left: 10px;
+  padding: 5px;
   position: absolute;
-  top: -40px;
+  top: -50px;
+}
+.single .back:hover {
+  font-weight: bold;
 }
 .single img {
   margin: 0 18px 8px 14px;

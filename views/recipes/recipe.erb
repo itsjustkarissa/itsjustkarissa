@@ -9,10 +9,19 @@
           <li><%= ingredient %></li>
         <% end %>
       </ul>
+<!--
       <ol>
         <% @contents["steps"].each do |step| %>
           <li><%= step %></li>
         <% end %>
+      </ol>
+-->
+    </div>
+    <div class="details2">
+      <ol>
+      <% @contents["steps"].each do |step| %>
+        <li><%= step %></li>
+      <% end %>
       </ol>
     </div>
   </section>

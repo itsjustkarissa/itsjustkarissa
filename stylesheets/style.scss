@@ -82,6 +82,7 @@ body {
   font-family: PrestigeEliteStdBold;
   font-size: 14px;
   line-height: 24px;
+  margin-top: 74px;
 }
 header,
 h1,h2,h3,
@@ -97,7 +98,7 @@ h1, nav {
 }
 h1 {
   font-size: 36px;
-  margin-top: 74px;
+/*   margin-top: 74px; */
 /*   text-shadow: 1px 0 0 black;  */
 }
 h1 a {
@@ -106,6 +107,7 @@ h1 a {
 nav {
   font-size: 24px;
   height: 104px;
+  margin-bottom: 70px;
 }
 .wrapper {
   margin: 0 auto;
@@ -184,10 +186,10 @@ h1 a:hover,
 } 
 */ 
 .blog {
-  margin-top: 70px;
+/*   margin-top: 70px; */
 }
 .post {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .post a {
   color: black;
@@ -200,19 +202,27 @@ h1 a:hover,
 .post ol,
 .single .details p,
 .single .details ul,
-.single .details ol {
+.single .details2 ol {
   font-family: PrestigeEliteStdBold;
   font-size: 12px;
   margin-top: 16px;
 }
-.single .details {
+.single .details p {
+  padding-bottom: 20px;
+}
+.single .details2 ol {
+  border-top: 1px dashed #999;
+  line-height: 20px;
   margin-bottom: 40px;
+  padding: 16px 0 0 14px;
+}
+.single .details2 ol li {
+  margin-bottom: 14px;
 }
 .single .details ul {
-  border-bottom: 1px dashed #999;
-  padding-bottom: 14px;
+/*   padding-bottom: 14px; */
 }
-.single .details ol {
+.single .details2 ol {
   list-style: circle;
   margin-left: 16px;
 }
@@ -221,8 +231,7 @@ h1 a:hover,
   color: black;
   display: inline-block;
   font-size: 24px;
-  height: 110px;
-  margin: 50px 15px 0;
+  margin: 0 15px 15px;
   width: 110px;
 }
 .shop a:hover,
@@ -247,7 +256,7 @@ h1 a:hover,
   top: -40px;
 }
 .single img {
-  margin: 0 30px 40px 0;
+  margin: 0 18px 8px 14px;
   width: 360px;
 }
 .single .details {
@@ -258,7 +267,7 @@ h1 a:hover,
   position: relative;
   color: black;
   font-size: 22px;
-  margin-left: 80%;
+  margin-left: 260px;
   padding: 4px;
   text-transform: uppercase;
 }

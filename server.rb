@@ -21,6 +21,32 @@ get '/' do
   erb :home # Render views/home.erb
 end
 
+get '/shop' do
+  @page = 'shop'
+  shop_files = YAML::load(file_relative('views/shop/_published.yaml'))
+  @shop_items = []
+  shop_files.reverse.each do |shop_file|
+    shop_yaml = YAML::load(file_relative("views/shop/#{shop_file}.yaml").read)
+    @shop_items.push({
+      :path => shop_file,
+      :image => shop_yaml["image"].sub('.', '-sample.'),
+      :title => shop_yaml["title"]
+    })
+  end
+  erb :'shop/shop_items'
+end
+
+get '/shop/:shop_item' do
+  @page = 'shop'
+  shop_files = YAML::load(file_relative('views/shop/_published.yaml'))
+  if shop_files.include?(params[:shop_item])
+    @contents = YAML::load(file_relative("views/shop/#{params[:shop_item]}.yaml").read)
+    erb :'shop/shop_item'
+  else
+    not_found
+  end
+end
+
 get '/recipes' do
   @page = 'recipes'
   recipe_files = YAML::load(file_relative('views/recipes/_published.yaml'))

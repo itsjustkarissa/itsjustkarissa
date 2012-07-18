@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'yaml'
+require 'sass'
 
 def file_relative(path)
   file = File.join(File.dirname(__FILE__), path)

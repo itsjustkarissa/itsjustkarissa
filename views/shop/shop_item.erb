@@ -1,3 +1,4 @@
+<!--
 <div class="wrapper">
   <section class="single">
     <a href="/shop" class="back">&#60; back</a>
@@ -7,7 +8,32 @@
       <p>
         <%= @contents["description"] %>
       </p>
-      <a href="#" class="button">Buy Me!</a>
+      <a href="checkout" class="button">Buy Me!</a>
     </div>
   </section>
 </div>
+-->
+
+<div class="wrapper">
+  <section class="single">
+    <a href="/shop" class="back">&#60; back</a>
+    <img src="<%= @contents["image"] %>" alt="<%= @contents["title"] %>">
+    <div class="details">
+      <h2><%= @contents["title"] %></h2>
+      <p>
+        <%= @contents["description"] %>
+      </p>
+      <form action="/" method="post">  
+        <span>Email:</span><input name="content"></input>
+        <span>Full name:</span><input name="content"></input>
+        <span>Address:</span><input name="content"></input>
+        <span>City:</span><input name="content"></input>
+        <span>State:</span><input name="content"></input>
+        <span>Zipcode:</span><input name="content"></input>
+        <span>Country:</span><input name="content"></input>
+      </form>
+      <a href="#" class="button">Place Order!</a>
+    </div>
+  </section>
+</div>
+

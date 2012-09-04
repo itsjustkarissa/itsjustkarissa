@@ -17,14 +17,17 @@
 <div class="wrapper">
   <section class="single">
     <a href="/shop" class="back">&#60; back</a>
-    <img src="<%= @contents["image"] %>" alt="<%= @contents["title"] %>">
+<!--     <img src="<%= @contents["image"] %>" alt="<%= @contents["title"] %>"> -->
     <div class="details">
       <h2><%= @contents["title"] %></h2>
       <p>
         <%= @contents["description"] %>
       </p>
+    </div>
+    <div class="checkout">
       <form action="/" method="post">  
-        <span>Email:</span><input name="content"></input>
+        <h2>1.Billing &amp; Shipping Info</h2>
+        <span>Contact email:</span><input name="content"></input>
         <span>Full name:</span><input name="content"></input>
         <span>Address:</span><input name="content"></input>
         <span>City:</span><input name="content"></input>
@@ -32,7 +35,22 @@
         <span>Zipcode:</span><input name="content"></input>
         <span>Country:</span><input name="content"></input>
       </form>
-      <a href="#" class="button">Place Order!</a>
+      <form action="/" method="post" class="payment">
+        <h2>2.Payment Info</h2>  
+        <span>Card number:</span><input name="content"></input>
+        <span>Cardholder name:</span><input name="content"></input>
+        <span>Expiration date (mm/yy):</span><input name="content"></input>
+        <span>Security code (?):</span><input name="content"></input>
+        <section class="summary">
+          <div>
+            <span>Price $30.00</span>
+            <span>Subtotal $30.00</span>
+            <span>Shipping $6.00</span>
+          </div>
+          <span>Total $36.00</span>
+          <a href="#" class="button">Place Order!</a>
+        </section>
+      </form>
     </div>
   </section>
 </div>
